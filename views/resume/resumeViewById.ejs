@@ -1,14 +1,31 @@
-<html>
-<head>
-    <title>Resumes - <%= result[0].resume_name %></title>
-</head>
-<body>
+<%- include("../includes/header.ejs", {title:"Companies - " + result[0].resume_name}); %>
     <h1>Resumes</h1>
     <ul>
         <li>Resume ID: <%= result[0].resume_id%></li>
         <li>Resume Name: <%= result[0].resume_name %></li>
         <li>Account ID: <%= result[0].account_id %></li>
+        <li>Skill(z):
+            <ul>
+                <% for(var i=0; skills.length > i; i++ ) { %>
+                <li><%= skills[i] %></li>
+                <% } %>
+            </ul>
+        </li>
+        <li>Company(z):
+            <ul>
+                <% for(var i=0; companys.length > i; i++ ) { %>
+                <li><%= companys[i] %></li>
+                <% } %>
+            </ul>
+        </li>
+        <li>School(z):
+            <ul>
+                <% for(var i=0; schools.length > i; i++ ) { %>
+                <li><%= schools[i] %></li>
+                <% } %>
+            </ul>
+        </li>
     </ul>
-</body>
+<a href="/resume/all"><< back</a>
 
-</html>
+<%- include("../includes/footer.ejs"); %>
