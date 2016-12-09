@@ -45,7 +45,7 @@ exports.delete = function(school_id, callback) {
 };
 
 exports.update = function(params, callback) {
-    var query = 'UPDATE school SET school_name = ?, address_id = ? WHERE school_id = ?';
+    var query = 'UPDATE School SET school_name = ? , address_id = ? WHERE school_id = ? ';
     var queryData = [params.school_name, params.address_id, params.school_id];
 
     connection.query(query, queryData, function(err, result) {
